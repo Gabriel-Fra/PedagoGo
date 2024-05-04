@@ -32,18 +32,16 @@
     }
 
     .hero_area {
-      height: auto; /* Changed */
+      height: 50vh; /* Changed */
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center; /* Center content horizontally */
       overflow: auto; /* Added */
-      flex-direction: column; /* Stack items vertically */
     }
 
     .color-box {
-      width: 100%;
-      height: auto; /* Adjusted */
+      width: 50%;
+      height: 100%;
       position: relative;
       overflow: hidden; /* Added */
     }
@@ -64,7 +62,7 @@
     }
 
     .detail-box {
-      width: 100%;
+      width: 80%;
       color: #ffffff;
       position: absolute;
       top: 50%;
@@ -92,7 +90,7 @@
     }
 
     .scrollable-content {
-      height: auto; /* Adjusted */
+      height: 100vh; /* Adjust height as needed */
       background-color: rgba(0, 0, 0, 0);
       margin-top: 20px;
       display: flex;
@@ -139,7 +137,7 @@
     /* Grid styles */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted for responsiveness */
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted columns for mobile */
       grid-gap: 20px;
       padding: 20px;
     }
@@ -155,39 +153,34 @@
     }
 
     .grid-item img {
-      width: 80px; /* Adjusted width */
-      height: 80px; /* Adjusted height */
+      width: 80px; /* Adjusted width for mobile */
+      height: 80px; /* Adjusted height for mobile */
       border-radius: 50%; /* Circular shape */
       object-fit: cover; /* Maintain aspect ratio */
       margin-bottom: 10px; /* Adjust margin */
     }
 
-    /* Media query for smaller screens */
+    .grid-item p {
+      font-size: 0.8em; /* Adjusted font size for mobile */
+      text-align: center; /* Center text */
+    }
+
     @media screen and (max-width: 768px) {
       .hero_area {
-        height: auto; /* Changed */
+        height: auto; /* Adjusted height for mobile */
       }
 
       .color-box {
         width: 100%;
       }
 
-      .scrollable-content {
-        padding: 0 20px;
+      .detail-box {
+        width: 90%; /* Adjusted width for mobile */
       }
 
       .rounded-button {
-        padding: 15px 30px;
-        font-size: 1.5em;
-      }
-
-      .detail-box {
-        width: 90%; /* Adjusted width */
-      }
-
-      .grid-item img {
-        width: 60px; /* Adjusted width */
-        height: 60px; /* Adjusted height */
+        padding: 15px 30px; /* Adjusted padding for mobile */
+        font-size: 1.5em; /* Adjusted font size for mobile */
       }
     }
   </style>
@@ -197,7 +190,7 @@
     <div class="color-box left-color">
       <div class="content-wrapper">
         <div class="detail-box">
-          <h1 style="font-size: 40px;" class="animated-text">PedagoGo!</h1>
+          <h1 style="font-size: 40px;" class="animated-text">PedagoGo!</h1> <!-- Adjusted font size for mobile -->
           <p class="animated-text">Your friend in pedagogy</p> <!-- Added -->
         </div>
       </div>
