@@ -32,7 +32,7 @@
     }
 
     .hero_area {
-      height: 50vh; /* Changed */
+      height: 80vh; /* Changed */
       position: relative;
       display: flex;
       align-items: center;
@@ -137,14 +137,14 @@
     /* Grid styles */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted columns for mobile */
-      grid-gap: 20px;
+      grid-template-columns: repeat(3, 1fr); /* 4 columns */
+      grid-gap: 10px;
       padding: 20px;
     }
 
     .grid-item {
       background-color: #ac2020; /* Green */
-      border-radius: 10px;
+      border-radius: 20px;
       padding: 20px;
       display: flex;
       justify-content: center;
@@ -152,37 +152,20 @@
       flex-direction: column;
     }
 
+    .grid-item p {
+  font-size: 0.9em; /* Adjusted font size for smaller text */
+    }
+
+
     .grid-item img {
-      width: 80px; /* Adjusted width for mobile */
-      height: 80px; /* Adjusted height for mobile */
-      border-radius: 15px; /* Adjusted border radius for mobile */
+      width: 50px; /* Fixed width */
+      height: 50px; /* Fixed height */
+      border-radius: 50%; /* Circular shape */
       object-fit: cover; /* Maintain aspect ratio */
       margin-bottom: 10px; /* Adjust margin */
     }
-
-    .grid-item p {
-      font-size: 0.8em; /* Adjusted font size for mobile */
-      text-align: center; /* Center text */
-    }
-
-    @media screen and (max-width: 768px) {
-      .hero_area {
-        height: auto; /* Adjusted height for mobile */
-      }
-
-      .color-box {
-        width: 100%;
-      }
-
-      .detail-box {
-        width: 90%; /* Adjusted width for mobile */
-      }
-
-      .rounded-button {
-        padding: 15px 30px; /* Adjusted padding for mobile */
-        font-size: 1.5em; /* Adjusted font size for mobile */
-      }
-    }
+    
+    
   </style>
 </head>
 <body>
@@ -190,7 +173,7 @@
     <div class="color-box left-color">
       <div class="content-wrapper">
         <div class="detail-box">
-          <h1 style="font-size: 40px;" class="animated-text">PedagoGo!</h1> <!-- Adjusted font size for mobile -->
+          <h1 style="font-size: 60px;" class="animated-text">PedagoGo!</h1>
           <p class="animated-text">Your friend in pedagogy</p> <!-- Added -->
         </div>
       </div>
@@ -201,23 +184,28 @@
       </div>
     </div>
   </div>
+  <div class = "scrollable-content"></div>
   <div class="scrollable-content">
     <div class="grid-container">
       <div class="grid-item">
         <img src="book1.jpg">
-        <p>"Teach Like a Champion 2.0: 62 Techniques that Put Students on the Path to College" by Doug Lemov</p>
+        <p>"Teach Like a Champion 2.0: 62 Techniques that Put 
+            Students on the Path to College" by Doug Lemov</p>
       </div>
       <div class="grid-item">
         <img src="book2.jfif">
-        <p>"How Learning Works: Seven Research-Based Principles for Smart Teaching" by Susan A. Ambrose, et al.</p>
+        <p>"How Learning Works: Seven Research-Based Principles
+            for Smart Teaching" by Susan A. Ambrose, et al.</p>
       </div>
       <div class="grid-item">
         <img src="book3.jpg">
-        <p>"The Skillful Teacher: Building Your Teaching Skills" by Stephen D. Brookfield and Stephen Preskill </p>
+        <p>"The Skillful Teacher: Building Your Teaching Skills"
+            by Stephen D. Brookfield and Stephen Preskill </p>
       </div>
       <div class="grid-item">
         <img src="book4.jfif">
-        <p>"The First Days of School: How to Be an Effective Teacher" by Harry K. Wong and Rosemary T. Wong</p>
+        <p>"The First Days of School: How to Be an Effective
+            Teacher" by Harry K. Wong and Rosemary T. Wong</p>
       </div>
       <div class="grid-item">
         <img src="book5.jfif">
@@ -225,11 +213,13 @@
       </div>
       <div class="grid-item">
         <img src="book6.jfif">
-        <p>"Visible Learning for Teachers: Maximizing Impact on Learning" by John Hattie</p>
+        <p>"Visible Learning for Teachers: Maximizing Impact
+            on Learning" by John Hattie</p>
       </div>
       <div class="grid-item">
         <img src="book7.jfif">
-        <p>"The Differentiated Classroom: Responding to the Needs of All Learners" by Carol Ann Tomlinson</p>
+        <p>"The Differentiated Classroom: Responding to the
+            Needs of All Learners" by Carol Ann Tomlinson</p>
       </div>
       <div class="grid-item">
         <img src="book8.jfif">
@@ -237,19 +227,23 @@
       </div>
       <div class="grid-item">
         <img src="book9.jpg">
-        <p>"Learner-Centered Teaching: Putting the Research on Learning into Practice" by Terry Doyle</p>
+        <p>"Learner-Centered Teaching: Putting the Research
+            on Learning into Practice" by Terry Doyle</p>
       </div>
       <div class="grid-item">
         <img src="book10.jfif">
-        <p>"Small Teaching: Everyday Lessons from the Science of Learning" by James M. Lang</p>
+        <p>"Small Teaching: Everyday Lessons from the Science
+            of Learning" by James M. Lang</p>
       </div>
       <div class="grid-item">
         <img src="book11.jpg">
-        <p>"Make It Stick: The Science of Successful Learning" by Peter C. Brown, et al.</p>
+        <p>"Make It Stick: The Science of Successful Learning"
+            by Peter C. Brown, et al.</p>
       </div>
       <div class="grid-item">
         <img src="book12.jpg">
-        <p>"The Art of Teaching Adults: How to Become an Exceptional Instructor and Facilitator" by Peter Renner</p>
+        <p>"The Art of Teaching Adults: How to Become an Exceptional
+            Instructor and Facilitator" by Peter Renner</p>
       </div>
     </div>
   </div> 
