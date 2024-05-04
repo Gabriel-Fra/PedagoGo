@@ -32,16 +32,18 @@
     }
 
     .hero_area {
-      height: 80vh; /* Changed */
+      height: auto; /* Changed */
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: center; /* Center content horizontally */
       overflow: auto; /* Added */
+      flex-direction: column; /* Stack items vertically */
     }
 
     .color-box {
-      width: 50%;
-      height: 100%;
+      width: 100%;
+      height: auto; /* Adjusted */
       position: relative;
       overflow: hidden; /* Added */
     }
@@ -62,7 +64,7 @@
     }
 
     .detail-box {
-      width: 80%;
+      width: 100%;
       color: #ffffff;
       position: absolute;
       top: 50%;
@@ -90,7 +92,7 @@
     }
 
     .scrollable-content {
-      height: 100vh; /* Adjust height as needed */
+      height: auto; /* Adjusted */
       background-color: rgba(0, 0, 0, 0);
       margin-top: 20px;
       display: flex;
@@ -137,7 +139,7 @@
     /* Grid styles */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted for responsiveness */
       grid-gap: 20px;
       padding: 20px;
     }
@@ -153,11 +155,40 @@
     }
 
     .grid-item img {
-      width: 100px; /* Fixed width */
-      height: 100px; /* Fixed height */
+      width: 80px; /* Adjusted width */
+      height: 80px; /* Adjusted height */
       border-radius: 50%; /* Circular shape */
       object-fit: cover; /* Maintain aspect ratio */
       margin-bottom: 10px; /* Adjust margin */
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+      .hero_area {
+        height: auto; /* Changed */
+      }
+
+      .color-box {
+        width: 100%;
+      }
+
+      .scrollable-content {
+        padding: 0 20px;
+      }
+
+      .rounded-button {
+        padding: 15px 30px;
+        font-size: 1.5em;
+      }
+
+      .detail-box {
+        width: 90%; /* Adjusted width */
+      }
+
+      .grid-item img {
+        width: 60px; /* Adjusted width */
+        height: 60px; /* Adjusted height */
+      }
     }
   </style>
 </head>
@@ -166,7 +197,7 @@
     <div class="color-box left-color">
       <div class="content-wrapper">
         <div class="detail-box">
-          <h1 style="font-size: 60px;" class="animated-text">PedagoGo!</h1>
+          <h1 style="font-size: 40px;" class="animated-text">PedagoGo!</h1>
           <p class="animated-text">Your friend in pedagogy</p> <!-- Added -->
         </div>
       </div>
