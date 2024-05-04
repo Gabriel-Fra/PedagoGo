@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="title">Tell It!</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #7dcfff;
+      background-image: url("Bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #333333;
+    }
+
+    .question {
+      margin-bottom: 40px;
+    }
+
+    .question p {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #555555;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: #666666;
+    }
+
+    .options input[type="radio"] {
+      transform: scale(2.5); /* Increase the scale as desired */
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 30px;
+      font-size: 40px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333333;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      .question p {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .options li {
+        font-size: 18px;
+      }
+
+      .submit-btn {
+        font-size: 40px;
+        padding: 10px 20px;
+      }
+
+      .result {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tell It!</h1>
+
+    <div class="question">
+      <p><strong>Question 1: What is the definition of "acumen"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="a"> a) The quality of being believable or trustworthy
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="b"> b) Keenness and quickness in understanding and dealing with a situation
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" id="question1" value="c"> c) The state of being devoid or partially devoid of sensation or consciousness
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2: What is the definition of "cat"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="a"> a) A male domestic cat
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="b"> b) A domestic cat with mottled black, brown, and orange markings resembling tortoiseshell
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" id="question2" value="c"> c) A small domesticated carnivorous mammal
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3: What is the definition of "book"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="a"> a) A written or printed work consisting of pages glued or sewn together along one side and bound in covers
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="b"> b) A single book or a bound collection of printed sheets
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" id="question3" value="c"> c) A book, especially a large, heavy, scholarly one
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 4: What is the definition of "green"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="a"> a) Having much foliage
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="b"> b) Of the color between blue and yellow in the spectrum; colored like grass or emeralds
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" id="question4" value="c"> c) A colour
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 5: What is the definition of "big"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="a"> a) Of an extent, amount, or intensity considerably above the normal or average
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="b"> b) Having a great deal of importance or prominence
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" id="question5" value="c"> c) Of considerable size, extent, or intensity
+          </label>
+        </li>
+        <div class="question">
+  <p><strong>Question 6: What is the definition of "persistent"?</strong></p>
+  <ul class="options">
+    <li>
+      <label>
+        <input type="radio" name="question6" id="question6" value="a"> a) Temporary
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question6" id="question6" value="b"> b) Lasting or enduring
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question6" id="question6" value="c"> c) Fragile or delicate
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="question">
+  <p><strong>Question 7: What is the definition of "fallacious"?</strong></p>
+  <ul class="options">
+    <li>
+      <label>
+        <input type="radio" name="question7" id="question7" value="a"> a) Clear or definite
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question7" id="question7" value="b"> b) Mistaken belief
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question7" id="question7" value="c"> c) Unimportant or insignificant
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="question">
+  <p><strong>Question 8: What is the definition of "procrastinate"?</strong></p>
+  <ul class="options">
+    <li>
+      <label>
+        <input type="radio" name="question8" id="question8" value="a"> a) To complete a task efficiently
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question8" id="question8" value="b"> b) To delay or postpone action
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question8" id="question8" value="c"> c) To provide assistance or support
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="question">
+  <p><strong>Question 9: What is the definition of "reliable"?</strong></p>
+  <ul class="options">
+    <li>
+      <label>
+        <input type="radio" name="question9" id="question9" value="a"> a) Untrustworthy or undependable
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question9" id="question9" value="b"> b) Unstable or unpredictable
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="radio" name="question9" id="question9" value="c"> c) Capable of being relied on; trustworthy
+      </label>
+    </li>
+    </div>
+    <div class="question">
+      <p><strong>Question 10: What is the definition of "abscond"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question10" id="question10" value="a"> a) Consisting of similar elements or characteristics
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question10" id="question10" value="b"> b) Exclusive or limited in nature
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question10" id="question10" value="c"> c) Leave hurriedly and secretly
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more questions following the same format -->
+
+  <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+  </div>
+
+  <div id="score" class="result"></div> <!-- Add a div to display the score -->
+
+  <script>
+    function checkAnswers() {
+      var correctCount = 0;
+
+      // Check answers for question 1
+      var question1Answer = document.querySelector('input[name="question1"]:checked');
+      if (question1Answer && question1Answer.value === "b") {
+        correctCount++;
+      }
+
+      // Check answers for question 2
+      var question2Answer = document.querySelector('input[name="question2"]:checked');
+      if (question2Answer && question2Answer.value === "c") {
+        correctCount++;
+      }
+
+      // Check answers for question 3
+      var question3Answer = document.querySelector('input[name="question3"]:checked');
+      if (question3Answer && question3Answer.value === "a") {
+        correctCount++;
+      }
+
+      // Check answers for question 4
+      var question4Answer = document.querySelector('input[name="question4"]:checked');
+      if (question4Answer && question4Answer.value === "b") {
+        correctCount++;
+      }
+
+      // Check answers for question 5
+      var question5Answer = document.querySelector('input[name="question5"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
+        correctCount++;
+      }
+      // Check answers for question 6
+      var question5Answer = document.querySelector('input[name="question6"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;
+      }
+      // Check answers for question 7
+      var question5Answer = document.querySelector('input[name="question7"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;        
+      }
+      // Check answers for question 8
+      var question5Answer = document.querySelector('input[name="question8"]:checked');
+      if (question5Answer && question5Answer.value === "b") {
+        correctCount++;        
+      }
+      // Check answers for question 9
+      var question5Answer = document.querySelector('input[name="question9"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
+        correctCount++; 
+      }
+      // Check answers for question 10
+      var question5Answer = document.querySelector('input[name="question10"]:checked');
+      if (question5Answer && question5Answer.value === "c") {
+        correctCount++;
+      }  
+        
+      window.location.href = "score1.html?score=" + correctCount;      
+    }
+  </script>
+</body>
+</html>

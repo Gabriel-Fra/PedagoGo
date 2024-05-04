@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Score</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      background-image: url("Bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #333333;
+    }
+
+    .score {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    .message {
+      font-size: 24px;
+      color: #555555;
+    }
+
+    .next {
+      margin-top: 30px;
+      font-size: 40px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Score Results</h1>
+    <div class="score">
+      <!-- Display the score dynamically -->
+      <span id="score"></span>
+    </div>
+    <div class="message">
+      <!-- Display a message based on the score -->
+      <span id="message"></span>
+    </div>
+
+    <button onclick="proceedToNextLevel()" class="next">Proceed to Next Level</button>
+
+    <script>
+      // Retrieve the score from the URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = urlParams.get('score');
+
+      // Display the score on the page
+      document.getElementById("score").textContent = score;
+
+      // Display a message based on the score
+      let message = '';
+      if (score === '5') {
+        message = 'Congratulations! You got a perfect score!';
+      } else if (score >= '3') {
+        message = 'Great job! You did well!';
+      } else {
+        message = 'Better luck next time!';
+      }
+      document.getElementById("message").textContent = message;
+
+      function proceedToNextLevel() {
+        // Redirect to the next level HTML page
+        window.location.href = "medium-level.html";
+      }
+    </script>
+  </div>
+</body>
+</html>

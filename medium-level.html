@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="title">Tell It!</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #7dcfff;
+      background-image: url("Bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #333333;
+    }
+
+    .question {
+      margin-bottom: 40px;
+    }
+
+    .question p {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #555555;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: #666666;
+    }
+
+    .options input[type="radio"] {
+      transform: scale(2.5); /* Increase the scale as desired */
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin-top: 30px;
+      font-size: 40px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333333;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      .question p {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .options li {
+        font-size: 18px;
+      }
+
+      .submit-btn {
+        font-size: 40px;
+        padding: 10px 20px;
+      }
+
+      .result {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tell It!</h1>
+    <div class="question">
+      <p><strong>Question 1: What is the definition of the word "example"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question1" value="incorrect">
+            a) A small sample of something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" value="correct">
+            b) A thing characteristic of its kind or illustrating a general rule
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" value="incorrect">
+            c) A written or printed work consisting of pages glued or sewn together along one side and bound in covers
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more questions following the same format -->
+    <div class="question">
+      <p><strong>Question 2: What is the definition of the word "abundant"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question2" value="correct">
+            a) Existing or available in large quantities; plentiful
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" value="incorrect">
+            b) A person who studies and collects coins and banknotes
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" value="incorrect">
+            c) The act of moving or copying something from one place to another
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3: What is the definition of the word "ambiguous"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question3" value="correct">
+            a) Open to more than one interpretation; having a double meaning
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            b) A small, short-lived insect that feeds on the blood of humans and animals
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question3" value="incorrect">
+            c) A sudden and brief burst of light or heat
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 4: What is the definition of the word "diverse"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            a) A small round seed enclosed in a fruit, having the capacity to develop into a new plant
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="correct">
+            b) Showing a great deal of variety; very different
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question4" value="incorrect">
+            c) An act or instance of producing offspring or multiplying by such production
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 5: What is the definition of the word "eloquent"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            a) A person who is skilled in solving mathematical problems
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="correct">
+            b) Fluent or persuasive in speaking or writing; clearly expressing or indicating something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question5" value="incorrect">
+            c) The state or quality of being accountable; responsibility for one's actions
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="question">
+      <p><strong>Question 6: What is the definition of the word "ephemeral"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question6" value="incorrect">
+            a) Long-lasting or permanent
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question6" value="correct">
+            b) Short-lived or transitory
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question6" value="incorrect">
+            c) Delicate or fragile
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 7: What is the definition of the word "obfuscate"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question7" value="correct">
+            a) To confuse or make unclear
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question7" value="incorrect">
+            b) To clarify or elucidate
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question7" value="incorrect">
+            c) A sudden and brief burst of light or heat
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 8: What is the definition of the word "sesquipedalian"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question8" value="incorrect">
+            a) To shorten or abridge
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question8" value="correct">
+            b) Characterized by long words or long-windedness
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question8" value="incorrect">
+            c) To exaggerate or overstate
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 9: What is the definition of the word "equivocate"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question9" value="incorrect">
+            a) A person who is skilled in solving mathematical problems
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question9" value="incorrect">
+            b) Fluent or persuasive in speaking or writing; clearly expressing or indicating something
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question9" value="correct">
+            c) To use ambiguous or misleading language
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 10: What is the definition of the word "egregious"?</strong></p>
+      <ul class="options">
+        <li>
+          <label>
+            <input type="radio" name="question10" value="correct">
+            a) Remarkably bad or flagrant
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question10" value="incorrect">
+            b) Extraordinary or exceptional
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question10" value="incorrect">
+            c) The state or quality of being accountable
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more questions following the same format -->
+
+  <button class="submit-btn" onclick="checkAnswers()">Submit</button>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      var correctCount = 0;
+
+      // Check answers for question 1
+      var question1Answers = document.getElementsByName("question1");
+      if (question1Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 2
+      var question2Answers = document.getElementsByName("question2");
+      if (question2Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 3
+      var question3Answers = document.getElementsByName("question3");
+      if (question3Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 4
+      var question4Answers = document.getElementsByName("question4");
+      if (question4Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 5
+      var question5Answers = document.getElementsByName("question5");
+      if (question5Answers[1].checked) {
+        correctCount++;
+      }
+
+            // Check answers for question 6
+            var question1Answers = document.getElementsByName("question6");
+      if (question1Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 7
+      var question2Answers = document.getElementsByName("question7");
+      if (question2Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 8
+      var question3Answers = document.getElementsByName("question8");
+      if (question3Answers[0].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 9
+      var question4Answers = document.getElementsByName("question9");
+      if (question4Answers[1].checked) {
+        correctCount++;
+      }
+
+      // Check answers for question 10
+      var question5Answers = document.getElementsByName("question10");
+      if (question5Answers[1].checked) {
+        correctCount++;
+      }
+      // Check answers for more questions...
+
+      // Redirect to the score results page
+      window.location.href = "score.html?score=" + correctCount;
+    }
+  </script>
+</body>
+</html>

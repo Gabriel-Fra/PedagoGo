@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pre-Splash Animation</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* Set the background color to #78BDFE */
+    }
+
+    h1 {
+      font-family: 'CustomFont', Arial, sans-serif;
+      color: #ffffff;
+      font-size: 60px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .pre-splash {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ffffff;
+      background-image: url("Bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .start-button {
+      padding: 12px 24px;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      font-family: 'CustomFont', Arial, sans-serif;
+    }
+
+    .start-button:hover {
+      background-color: #0056b3;
+    }
+
+    .start-button:active {
+      background-color: #003c80;
+      transform: translateY(2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('NikumaruFont.woff.ttf') format('truetype');
+      /* Replace 'path/to/font-file.ttf' with the actual path to your font file */
+    }
+        .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="pre-splash">
+    <h1>Welcome to the Game!</h1>
+    <button class="start-button" onclick="proceedToGame()">Start Game</button>
+  </div>
+  <script>
+    function proceedToGame() {
+      var preSplash = document.querySelector('.pre-splash');
+      preSplash.classList.add('fade-out'); // Add the fade-out class to initiate the transition
+
+      setTimeout(function() {
+        window.location.href = "questions.html"; // Redirect to the game page after a delay
+      }, 1000); // Adjust the delay time (in milliseconds) as needed
+    }
+  </script>
+</body>
+</html>
