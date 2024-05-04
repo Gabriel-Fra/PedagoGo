@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Reset some default styles */
     * {
@@ -116,7 +117,7 @@
 
     /* Button styles */
     .rounded-button {
-      padding: 60px 500px; /* Increased padding to make the button larger */
+      padding: 10px 20px; /* Adjusted padding */
       background-color: #ac2020; /* Green */
       border: none;
       border-radius: 20px;
@@ -124,13 +125,37 @@
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 30px;
+      font-size: 1.2em; /* Relative font size */
       cursor: pointer;
       transition-duration: 0.4s;
     }
 
     .rounded-button:hover {
       background-color: #751e1e; /* Darker green */
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+      .hero_area {
+        flex-direction: column;
+      }
+
+      .color-box {
+        width: 100%;
+      }
+
+      .scrollable-content {
+        padding: 0 20px;
+      }
+
+      .rounded-button {
+        padding: 15px 30px;
+        font-size: 1.5em;
+      }
+
+      .detail-box {
+        width: 90%; /* Adjusted width */
+      }
     }
   </style>
 </head>
