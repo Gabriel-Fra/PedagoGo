@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PedagoGo!</title>
   <style>
     /* Reset some default styles */
     * {
@@ -15,32 +17,32 @@
     }
 
     .header {
-      height: 100px;
+      height: 60px; /* Reduced height */
       display: flex;
       align-items: center;
-      padding: 0 20px;
+      padding: 0 10px; /* Adjusted padding */
     }
 
     .header .navbar-brand img {
       max-height: 100%;
-      margin-right: 50px;
+      margin-right: 10px; /* Reduced margin */
     }
 
     .header .navbar-brand span {
       color: #ffffff;
-      font-size: 24px;
+      font-size: 18px; /* Reduced font size */
     }
 
     .hero_area {
-      height: 80vh; /* Changed */
+      height: 60vh; /* Changed */
       position: relative;
       display: flex;
       align-items: center;
-      overflow: auto; /* Added */
+      overflow: hidden; /* Added */
     }
 
     .color-box {
-      width: 50%;
+      width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden; /* Added */
@@ -86,16 +88,13 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 20px;
+      padding: 10px; /* Adjusted padding */
     }
 
     .scrollable-content {
-      height: 100vh; /* Adjust height as needed */
       background-color: rgba(0, 0, 0, 0);
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin-top: 10px; /* Adjusted margin */
+      padding: 10px; /* Adjusted padding */
     }
 
     /* Animation effect */
@@ -104,7 +103,7 @@
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-20px);
+        transform: translateY(-10px); /* Reduced animation */
       }
       100% {
         transform: translateY(0);
@@ -112,20 +111,20 @@
     }
 
     .animated-text {
-      animation: bounce 2s infinite;
+      animation: bounce 1s infinite; /* Adjusted animation duration */
     }
 
     /* Button styles */
     .rounded-button {
-      padding: 10px 20px; /* Adjusted padding */
+      padding: 5px 10px; /* Adjusted padding */
       background-color: #ac2020; /* Green */
       border: none;
-      border-radius: 20px;
+      border-radius: 10px; /* Reduced border radius */
       color: white;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 1.2em; /* Relative font size */
+      font-size: 1em; /* Relative font size */
       cursor: pointer;
       transition-duration: 0.4s;
     }
@@ -137,15 +136,15 @@
     /* Grid styles */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 4 columns */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
       grid-gap: 10px;
-      padding: 20px;
+      padding: 10px; /* Adjusted padding */
     }
 
     .grid-item {
       background-color: #ac2020; /* Green */
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 10px; /* Reduced border radius */
+      padding: 10px; /* Adjusted padding */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -153,19 +152,17 @@
     }
 
     .grid-item p {
-  font-size: 0.9em; /* Adjusted font size for smaller text */
+      font-size: 0.8em; /* Adjusted font size for smaller text */
     }
-
 
     .grid-item img {
-      width: 50px; /* Fixed width */
-      height: 50px; /* Fixed height */
+      width: 100px; /* Reduced width */
+      height: 100px; /* Reduced height */
       border-radius: 50%; /* Circular shape */
       object-fit: cover; /* Maintain aspect ratio */
-      margin-bottom: 10px; /* Adjust margin */
+      margin-bottom: 5px; /* Adjusted margin */
     }
-    
-    
+
   </style>
 </head>
 <body>
@@ -229,21 +226,6 @@
         <img src="book9.jpg">
         <p>"Learner-Centered Teaching: Putting the Research
             on Learning into Practice" by Terry Doyle</p>
-      </div>
-      <div class="grid-item">
-        <img src="book10.jfif">
-        <p>"Small Teaching: Everyday Lessons from the Science
-            of Learning" by James M. Lang</p>
-      </div>
-      <div class="grid-item">
-        <img src="book11.jpg">
-        <p>"Make It Stick: The Science of Successful Learning"
-            by Peter C. Brown, et al.</p>
-      </div>
-      <div class="grid-item">
-        <img src="book12.jpg">
-        <p>"The Art of Teaching Adults: How to Become an Exceptional
-            Instructor and Facilitator" by Peter Renner</p>
       </div>
     </div>
   </div> 
