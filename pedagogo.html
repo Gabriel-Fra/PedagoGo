@@ -11,7 +11,6 @@
 
     body {
       font-family: Arial, sans-serif;
-
     }
 
     .header {
@@ -32,7 +31,7 @@
     }
 
     .hero_area {
-      height: 30vh; /* Changed */
+      height: 80vh; /* Changed */
       position: relative;
       display: flex;
       align-items: center;
@@ -90,9 +89,12 @@
     }
 
     .scrollable-content {
-      height: 1000px; /* Adjust height as needed */
+      height: 100vh; /* Adjust height as needed */
       background-color: rgba(0, 0, 0, 0);
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Animation effect */
@@ -110,6 +112,25 @@
 
     .animated-text {
       animation: bounce 2s infinite;
+    }
+
+    /* Button styles */
+    .rounded-button {
+      padding: 60px 500px; /* Increased padding to make the button larger */
+      background-color: #ac2020; /* Green */
+      border: none;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 30px;
+      cursor: pointer;
+      transition-duration: 0.4s;
+    }
+
+    .rounded-button:hover {
+      background-color: #751e1e; /* Darker green */
     }
   </style>
 </head>
@@ -129,7 +150,9 @@
       </div>
     </div>
   </div>
-  <div class="scrollable-content"></div> 
+  <div class="scrollable-content">
+    <button class="rounded-button">Click Me!</button>
+  </div> 
 
   <script>
 
