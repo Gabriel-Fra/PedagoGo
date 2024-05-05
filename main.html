@@ -35,11 +35,71 @@
       font-size: 18px; /* Reduced font size */
     }
 
-    .burger-menu {
-      display: none; /* Initially hidden */
+  .burger-menu {
+      height: 50px;
+      width: 50px;
+      margin-left: auto;
+      position: relative;
       cursor: pointer;
+      z-index: 1000;
+      }
+    .burger-menu span {
+      height: 5px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 25px;
+      position: absolute;
+      transition: .3s ease;
+    }
+    .burger-menu span:nth-child(1) {
+      top: 25%;
+    }
+    .burger-menu span:nth-child(2) {
+      top: 50%;
+    }
+    .burger-menu span:nth-child(3) {
+      top: 75%;
+    }
+    .burger-menu.active span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .burger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      }
+    .off-screen-menu {
+      background-color: rgb(34, 37, 49);
+      height: 100vh;
+      width: 100%;
+      max-width: 450px; /* corrected */
+      position: fixed;
+      top: 0;
+      right: -450px; /* changed from max-width */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 3rem;
+      transition: .3s ease;
+      z-index: 999; /* Adjust z-index to ensure it appears above other elements */
+      color: #ffffff;
     }
 
+    .off-screen-menu.active {
+      right: 0;
+        }
+    .off-screen-menu ul {
+      list-style: none;
+      padding: 0;
+        }
+    .off-screen-menu li {
+      margin-bottom: 1rem;
+        }
     .navbar-links {
       display: flex;
       list-style: none;
@@ -189,6 +249,10 @@
     }
 
     @media only screen and (max-width: 700px) {
+      .burger-menu {
+        display: block; /* Show burger menu icon */
+      }
+
       .hero_area {
         flex-direction: column;
       }
@@ -220,22 +284,32 @@
         margin-right: 0; /* Remove margin for stacked links */
         margin-bottom: 10px; /* Add some space between links */
       }
-
-      .burger-menu {
-        display: block; /* Show burger menu icon */
-      }
     }
+
+    
   </style>
 </head>
 <body>
+  <div class="off-screen-menu">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+  </div>
+
   <div class="header">
     <div class="navbar-brand">
-      <img src="" alt="Logo">
       <span>PedagoGo!</span>
     </div>
-    <div class="burger-menu" onclick="toggleMenu()">
-      <img src="menu-icon.png" alt="Menu">
-    </div>
+  
+  <div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
     <ul class="navbar-links" id="navbarLinks">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -311,10 +385,13 @@
   </div> 
 
   <script>
-    function toggleMenu() {
-      var navbarLinks = document.getElementById("navbarLinks");
-      navbarLinks.classList.toggle("show");
-    }
-  </script>
+    const burgMenu = document.querySelector('.burger-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    burgMenu.addEventListener('click', () => {
+        burgMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
