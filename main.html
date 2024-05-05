@@ -20,7 +20,9 @@
       height: 60px; /* Reduced height */
       display: flex;
       align-items: center;
+      justify-content: space-between; /* Added */
       padding: 0 10px; /* Adjusted padding */
+      background-color: #ac2020; /* Added */
     }
 
     .header .navbar-brand img {
@@ -31,6 +33,26 @@
     .header .navbar-brand span {
       color: #ffffff;
       font-size: 18px; /* Reduced font size */
+    }
+
+    .burger-menu {
+      display: none; /* Initially hidden */
+      cursor: pointer;
+    }
+
+    .navbar-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar-links li {
+      margin-right: 20px;
+    }
+
+    .navbar-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
     }
 
     .hero_area {
@@ -137,11 +159,12 @@
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
-      grid-gap: 10px;
+      grid-gap: 20px;
       padding: 10px; /* Adjusted padding */
     }
 
     .grid-item {
+      box-shadow: 0 5px 10px rgba(0,0,0,0.5);
       background-color: #ac2020; /* Green */
       border-radius: 10px; /* Reduced border radius */
       padding: 10px; /* Adjusted padding */
@@ -153,6 +176,8 @@
 
     .grid-item p {
       font-size: 0.8em; /* Adjusted font size for smaller text */
+      text-align: center;
+      color: #ffffff;
     }
 
     .grid-item img {
@@ -175,10 +200,50 @@
       .right-color img {
         max-width: 150px;
       }
+
+      .navbar-links {
+        display: none; /* Hide nav links */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px; /* Adjusted top position */
+        left: 0;
+        width: 100%;
+        background-color: #ac2020; /* Match header background */
+        padding: 10px;
+      }
+
+      .navbar-links.show {
+        display: flex; /* Show nav links when .show class is added */
+      }
+
+      .navbar-links li {
+        margin-right: 0; /* Remove margin for stacked links */
+        margin-bottom: 10px; /* Add some space between links */
+      }
+
+      .burger-menu {
+        display: block; /* Show burger menu icon */
+      }
     }
   </style>
 </head>
 <body>
+  <div class="header">
+    <div class="navbar-brand">
+      <img src="" alt="Logo">
+      <span>PedagoGo!</span>
+    </div>
+    <div class="burger-menu" onclick="toggleMenu()">
+      <img src="menu-icon.png" alt="Menu">
+    </div>
+    <ul class="navbar-links" id="navbarLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
   <div class="hero_area">
     <div class="color-box left-color">
       <div class="content-wrapper">
@@ -194,7 +259,9 @@
       </div>
     </div>
   </div>
-  <div class = "scrollable-content"></div>
+  <div class = "scrollable-content">
+    
+  </div>
   <div class="scrollable-content">
     <div class="grid-container">
       <div class="grid-item">
@@ -244,7 +311,10 @@
   </div> 
 
   <script>
-
+    function toggleMenu() {
+      var navbarLinks = document.getElementById("navbarLinks");
+      navbarLinks.classList.toggle("show");
+    }
   </script>
 </body>
 </html>
