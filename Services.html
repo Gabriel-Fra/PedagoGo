@@ -89,7 +89,6 @@
         font-size: 3rem;
         transition: .3s ease;
         z-index: 999; /* Adjust z-index to ensure it appears above other elements */
-        color: #ffffff;
       }
   
       .off-screen-menu.active {
@@ -343,10 +342,26 @@
       }
     }
 
+    body.transitioning {
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Adjust the transition timing as needed */
+}
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease; /* Adjust animation timing as needed */
+    }
     
-      </style>
+  </style>
 </head>
-<body>
+<body class = "fade-in">
 
     <div class="off-screen-menu">
         <ul>
@@ -491,6 +506,29 @@
         }
     });
     }
+
+
+    function handleNavLinkClick(event) {
+      // Prevent the default behavior of the link
+      event.preventDefault();
+      
+      // Add a class to initiate the transition effect
+      document.body.classList.add('transitioning');
+
+      // Get the href attribute of the clicked link
+      const href = this.getAttribute('href');
+
+      // Wait for a short delay to allow the transition effect to start
+      setTimeout(() => {
+        // Redirect to the new page after the transition effect
+        window.location.href = href;
+      }, 500); // Adjust the delay timing as needed
+    }
+
+    // Add event listeners to all navigation links
+    document.querySelectorAll('.navbar-links a').forEach(link => {
+      link.addEventListener('click', handleNavLinkClick);
+    });
     </script>
 </body>
 </html>
