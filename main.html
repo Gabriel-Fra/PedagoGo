@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PedagoGo!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
   <style>
     /* Reset some default styles */
     * {
@@ -13,7 +14,23 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Nunito', cursive;
+    }
+
+    .footer {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center horizontally */
+      padding: 10px;
+      background-color: rgb(34, 37, 49);
+      text-align: center;
+      color: #ffffff;
+    }
+
+
+    .footer h2 {
+      text-align: center;
     }
 
     .header {
@@ -146,6 +163,13 @@
       background-color: inherit; /* Inherit the color from .color-box */
     }
 
+    /* CSS */
+.inline-flex-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+
     .detail-box {
       width: 80%;
       color: #ffffff;
@@ -176,9 +200,26 @@
 
     .scrollable-content {
       background-color: rgba(0, 0, 0, 0);
-      margin-top: 10px; /* Adjusted margin */
+      margin-top: 50px; /* Adjusted margin */
       padding: 10px; /* Adjusted padding */
+      text-align: center;
     }
+
+    .scrollable-content h1 {
+  display: inline;
+  font-size: 50px;
+}
+
+    .scrollable-content h3 {
+  display: inline;
+  font-size: 30px;
+}
+
+.scrollable-content img[src="prop.png"] {
+  max-width: 400px;
+  vertical-align: middle; /* Align image vertically with text */
+}
+
 
     /* Animation effect */
     @keyframes bounce {
@@ -293,10 +334,10 @@
 <body>
   <div class="off-screen-menu">
     <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 
@@ -312,10 +353,10 @@
   </div>
 
     <ul class="navbar-links" id="navbarLinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 
@@ -335,55 +376,31 @@
     </div>
   </div>
   <div class = "scrollable-content">
-    
+    <h1>Welcome to PedagoGo!</h1>
   </div>
   <div class="scrollable-content">
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="book1.jpg">
-        <p>"Teach Like a Champion 2.0: 62 Techniques that Put 
-            Students on the Path to College" by Doug Lemov</p>
-      </div>
-      <div class="grid-item">
-        <img src="book2.jfif">
-        <p>"How Learning Works: Seven Research-Based Principles
-            for Smart Teaching" by Susan A. Ambrose, et al.</p>
-      </div>
-      <div class="grid-item">
-        <img src="book3.jpg">
-        <p>"The Skillful Teacher: Building Your Teaching Skills"
-            by Stephen D. Brookfield and Stephen Preskill </p>
-      </div>
-      <div class="grid-item">
-        <img src="book4.jfif">
-        <p>"The First Days of School: How to Be an Effective
-            Teacher" by Harry K. Wong and Rosemary T. Wong</p>
-      </div>
-      <div class="grid-item">
-        <img src="book5.jfif">
-        <p>"Understanding by Design" by Grant Wiggins and Jay McTighe</p>
-      </div>
-      <div class="grid-item">
-        <img src="book6.jfif">
-        <p>"Visible Learning for Teachers: Maximizing Impact
-            on Learning" by John Hattie</p>
-      </div>
-      <div class="grid-item">
-        <img src="book7.jfif">
-        <p>"The Differentiated Classroom: Responding to the
-            Needs of All Learners" by Carol Ann Tomlinson</p>
-      </div>
-      <div class="grid-item">
-        <img src="book8.jfif">
-        <p>"Teaching with the Brain in Mind" by Eric Jensen</p>
-      </div>
-      <div class="grid-item">
-        <img src="book9.jpg">
-        <p>"Learner-Centered Teaching: Putting the Research
-            on Learning into Practice" by Terry Doyle</p>
-      </div>
-    </div>
+    <img src="prop.png" alt="Props Image"></img>
   </div> 
+  <div class="scrollable-content">
+    <h3>
+      Whether you're a seasoned educator or just starting out, <br>
+      PedagoGo is here to support you. With our innovative platform, <br>
+      we provide resources and tools to help you excel in teaching. <br>
+      Join us on this exciting journey where pedagogy meets possibility!<br>
+    </h3>
+  </div>
+  
+
+  <div class="scrollable-content">
+
+  </div>
+
+  <div class="footer">
+    <h2>End of home page</h2>
+  </div>
+  <div class="footer">
+    <p>The contents are in the menu</p>
+  </div>
 
   <script>
     const burgMenu = document.querySelector('.burger-menu');
