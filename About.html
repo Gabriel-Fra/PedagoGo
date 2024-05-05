@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PedagoGo!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+      /* Reset some default styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+  
+      body {
+        font-family: 'Nunito', cursive;
+      }
+  
+      .header {
+        height: 60px; /* Reduced height */
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Added */
+        padding: 0 10px; /* Adjusted padding */
+        background-color: #ac2020; /* Added */
+      }
+  
+      .header .navbar-brand img {
+        max-height: 100%;
+        margin-right: 10px; /* Reduced margin */
+      }
+  
+      .header .navbar-brand span {
+        color: #ffffff;
+        font-size: 18px; /* Reduced font size */
+      }
+  
+    .burger-menu {
+        display: none;
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+        z-index: 1000;
+        }
+      .burger-menu span {
+        height: 5px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 25px;
+        position: absolute;
+        transition: .3s ease;
+      }
+      .burger-menu span:nth-child(1) {
+        top: 25%;
+      }
+      .burger-menu span:nth-child(2) {
+        top: 50%;
+      }
+      .burger-menu span:nth-child(3) {
+        top: 75%;
+      }
+      .burger-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger-menu.active span:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        }
+      .off-screen-menu {
+        background-color: rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 450px; /* corrected */
+        position: fixed;
+        top: 0;
+        right: -450px; /* changed from max-width */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+        z-index: 999; /* Adjust z-index to ensure it appears above other elements */
+        color: #ffffff;
+      }
+  
+      .off-screen-menu.active {
+        right: 0;
+          }
+      .off-screen-menu ul {
+        list-style: none;
+        padding: 0;
+          }
+      .off-screen-menu li {
+        margin-bottom: 1rem;
+          }
+      .navbar-links {
+        display: flex;
+        list-style: none;
+      }
+  
+      .navbar-links li {
+        margin-right: 20px;
+      }
+  
+      .navbar-links li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+  
+      .hero_area {
+        height: 60vh; /* Changed */
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* Added */
+      }
+  
+      .color-box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden; /* Added */
+      }
+  
+      .left-color {
+        background-color: #701a1a;
+      }
+  
+      .right-color {
+        background-color: #822525;
+        background-image: url("backg.png");
+      }
+  
+      .content-wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: inherit; /* Inherit the color from .color-box */
+      }
+  
+      .detail-box {
+        width: 80%;
+        color: #ffffff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Added */
+        text-align: center; /* Added */
+      }
+  
+      .detail-box h1,
+      .detail-box p {
+        margin: 10px 0; /* Increased spacing */
+      }
+  
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px; /* Adjusted padding */
+      }
+  
+      .scrollable-content {
+        background-color: rgba(0, 0, 0, 0);
+        margin-top: 50px; /* Adjusted margin */
+        margin-bottom: 30px;
+        padding: 10px; /* Adjusted padding */
+        text-align: center;
+      }
+
+      .scrollable-content h1 {
+        font-size: 80px;
+      }
+
+      .scrollable-content h2 {
+        font-size: 40px;
+      }
+
+      .scrollable-content li {
+        text-align: justify;
+        font-size: 20px;
+      }
+  
+      .scrollable-content h2 {
+        text-align: justify;
+
+      }
+
+      /* Animation effect */
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px); /* Reduced animation */
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+  
+      .animated-text {
+        animation: bounce 1s infinite; /* Adjusted animation duration */
+      }
+  
+      /* Button styles */
+      .rounded-button {
+        padding: 5px 10px; /* Adjusted padding */
+        background-color: #ac2020; /* Green */
+        border: none;
+        border-radius: 10px; /* Reduced border radius */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em; /* Relative font size */
+        cursor: pointer;
+        transition-duration: 0.4s;
+      }
+  
+      .rounded-button:hover {
+        background-color: #751e1e; /* Darker green */
+      }
+  
+      /* Grid styles */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+        grid-gap: 20px;
+        padding: 10px; /* Adjusted padding */
+      }
+  
+      .grid-item {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        background-color: #ac2020; /* Green */
+        border-radius: 10px; /* Reduced border radius */
+        padding: 10px; /* Adjusted padding */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+  
+      .grid-item p {
+        font-size: 0.8em; /* Adjusted font size for smaller text */
+        text-align: center;
+        color: #ffffff;
+      }
+  
+      .grid-item img {
+        width: 100px; /* Reduced width */
+        height: 100px; /* Reduced height */
+        border-radius: 50%; /* Circular shape */
+        object-fit: cover; /* Maintain aspect ratio */
+        margin-bottom: 5px; /* Adjusted margin */
+      }
+      @media only screen and (max-width: 700px) {
+      .burger-menu {
+        display: block; /* Show burger menu icon */
+      }
+
+      .hero_area {
+        flex-direction: column;
+      }
+
+      .color-box {
+        height: 50vh; /* Adjusted height */
+      }
+
+      .right-color img {
+        max-width: 150px;
+      }
+
+      .navbar-links {
+        display: none; /* Hide nav links */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px; /* Adjusted top position */
+        left: 0;
+        width: 100%;
+        background-color: #ac2020; /* Match header background */
+        padding: 10px;
+      }
+
+      .navbar-links.show {
+        display: flex; /* Show nav links when .show class is added */
+      }
+
+      .navbar-links li {
+        margin-right: 0; /* Remove margin for stacked links */
+        margin-bottom: 10px; /* Add some space between links */
+      }
+    }
+
+    
+      </style>
+</head>
+<body>
+
+    <div class="off-screen-menu">
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    
+      <div class="header">
+        <div class="navbar-brand">
+          <span>PedagoGo!</span>
+        </div>
+      
+      <div class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+        <ul class="navbar-links" id="navbarLinks">
+          <li><a href="main.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+    <div class="scrollable-content">
+        <h1>About Us</h1>
+        <h3>Find out about our purpose and team</h3>
+        <ul>
+            <li></li>
+            <h2>Our purpose</h2>
+            <li>Our objective is to unravel the strategies and motivational techniques of Bongabon Senior High School STEM (Science Technology Engineering and Mathematics) Teachers. Future teachers and beginning teachers can use this website as a guide through their teaching journey. We aim to foster a supportive community where educators can share insights, resources, and experiences to enhance teaching practices and student learning outcomes. By promoting collaboration and professional development, we strive to empower educators to excel in their roles and positively impact the next generation.</li>
+            <li></li>
+            <h2>Our team</h2>
+        </ul>
+        <ul style="list-style-type:disc;">
+            <li>• Bayan, Justin</li>
+            <li>• Cleofas, Franzleo</li>
+            <li>• Riguer, Jairus Karl</li>
+            <li>• Saguiguit, Mariella Eliz</li>
+            <li>• Sioson, Gabriel</li>
+            <li>• Viterbo, El-jacob</li>
+            <li>• Zabat, Leonor IV</li>
+        </ul>
+    </div>
+
+    <script>
+    const burgMenu = document.querySelector('.burger-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    burgMenu.addEventListener('click', () => {
+        burgMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>
