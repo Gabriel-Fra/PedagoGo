@@ -17,11 +17,11 @@
       }
 
       @font-face {
-    font-family: 'Nunito';
-    src: url('Nunito-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+        font-family: 'Nunito';
+        src: url('Nunito-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
   
       .header {
         height: 60px; /* Reduced height */
@@ -42,7 +42,7 @@
         font-size: 18px; /* Reduced font size */
       }
   
-    .burger-menu {
+      .burger-menu {
         display: none;
         height: 50px;
         width: 50px;
@@ -50,7 +50,8 @@
         position: relative;
         cursor: pointer;
         z-index: 1000;
-        }
+      }
+      
       .burger-menu span {
         height: 5px;
         width: 100%;
@@ -59,26 +60,33 @@
         position: absolute;
         transition: .3s ease;
       }
+      
       .burger-menu span:nth-child(1) {
         top: 25%;
       }
+      
       .burger-menu span:nth-child(2) {
         top: 50%;
       }
+      
       .burger-menu span:nth-child(3) {
         top: 75%;
       }
+      
       .burger-menu.active span:nth-child(1) {
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
       }
+      
       .burger-menu.active span:nth-child(2) {
         opacity: 0;
       }
+      
       .burger-menu.active span:nth-child(3) {
         top: 50%;
         transform: translateY(-50%) rotate(-45deg);
-        }
+      }
+      
       .off-screen-menu {
         background-color: rgb(34, 37, 49);
         height: 100vh;
@@ -100,14 +108,17 @@
   
       .off-screen-menu.active {
         right: 0;
-          }
+      }
+      
       .off-screen-menu ul {
         list-style: none;
         padding: 0;
-          }
+      }
+      
       .off-screen-menu li {
         margin-bottom: 1rem;
-          }
+      }
+      
       .navbar-links {
         display: flex;
         list-style: none;
@@ -253,29 +264,43 @@
   
       .grid-item {
         box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-        background-color: #ac2020; /* Green */
+        background-color: #dddddd; /* Green */
         border-radius: 10px; /* Reduced border radius */
         padding: 10px; /* Adjusted padding */
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        color: black;
       }
   
       .grid-item p {
         font-size: 0.8em; /* Adjusted font size for smaller text */
         text-align: center;
-        color: #ffffff;
+        color: #000000;
       }
   
       .grid-item img {
         width: 100px; /* Reduced width */
-        height: 100px; /* Reduced height */
-        border-radius: 50%; /* Circular shape */
+        height: 100px; /* Reduced height */ 
         object-fit: cover; /* Maintain aspect ratio */
         margin-bottom: 5px; /* Adjusted margin */
       }
-      @media only screen and (max-width: 700px) {
+
+      .team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .team-member img {
+        max-width: 200px;
+        height: 150px;
+        margin-bottom: 10px;
+      }
+      
+    @media only screen and (max-width: 700px) {
       .burger-menu {
         display: block; /* Show burger menu icon */
       }
@@ -313,12 +338,12 @@
       }
     }
 
-    
     body.transitioning {
-  opacity: 0;
-  transition: opacity 0.5s ease; /* Adjust the transition timing as needed */
-}
-@keyframes fadeIn {
+      opacity: 0;
+      transition: opacity 0.5s ease; /* Adjust the transition timing as needed */
+    }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
       }
@@ -331,90 +356,111 @@
       animation: fadeIn 1s ease; /* Adjust animation timing as needed */
     }
     
-  </style>
+    </style>
 </head>
-<body class = "fade-in">
+<body class="fade-in">
 
-    <div class="off-screen-menu">
-        <ul>
-          <li><a href="main.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    
-      <div class="header">
-        <div class="navbar-brand">
-          <span>PedagoGo!</span>
-        </div>
-      
-      <div class="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    
-        <ul class="navbar-links" id="navbarLinks">
-          <li><a href="main.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+<div class="off-screen-menu">
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
 
-    <div class="scrollable-content">
-        <h1>About Us</h1>
-        <h3>Find out about our purpose and team</h3>
-        <ul>
-            <li></li>
-            <h2>Our purpose</h2>
-            <li>Our objective is to unravel the strategies and motivational techniques of Bongabon Senior High School STEM (Science Technology Engineering and Mathematics) Teachers. Future teachers and beginning teachers can use this website as a guide through their teaching journey. We aim to foster a supportive community where educators can share insights, resources, and experiences to enhance teaching practices and student learning outcomes. By promoting collaboration and professional development, we strive to empower educators to excel in their roles and positively impact the next generation.</li>
-            <li></li>
-            <h2>Our team</h2>
-        </ul>
-        <ul style="list-style-type:disc;">
-            <li>• Bayan, Justin</li>
-            <li>• Cleofas, Franzleo</li>
-            <li>• Riguer, Jairus Karl</li>
-            <li>• Saguiguit, Mariella Eliz</li>
-            <li>• Sioson, Gabriel</li>
-            <li>• Viterbo, El-jacob</li>
-            <li>• Zabat, Leonor IV</li>
-        </ul>
+<div class="header">
+    <div class="navbar-brand">
+      <span>PedagoGo!</span>
     </div>
 
-    <script>
-    const burgMenu = document.querySelector('.burger-menu');
-    const offScreenMenu = document.querySelector('.off-screen-menu');
+    <div class="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    burgMenu.addEventListener('click', () => {
-        burgMenu.classList.toggle('active');
-        offScreenMenu.classList.toggle('active');
-    });
+    <ul class="navbar-links" id="navbarLinks">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
 
+<div class="scrollable-content">
+    <h1>About Us</h1>
+    <h3>Find out about our purpose and team</h3>
+    <ul>
+        <li></li>
+        <h2>Our purpose</h2>
+        <li>Our objective is to unravel the strategies and motivational techniques of Bongabon Senior High School STEM (Science Technology Engineering and Mathematics) Teachers. Future teachers and beginning teachers can use this website as a guide through their teaching journey. We aim to foster a supportive community where educators can share insights, resources, and experiences to enhance teaching practices and student learning outcomes. By promoting collaboration and professional development, we strive to empower educators to excel in their roles and positively impact the next generation.</li>
+        <li></li>
+        <h2>Our team</h2>
+    </ul>
+    
+    <div class="grid-container">
+        <div class="grid-item team-member">
+            <img src="team_member_1.jpg" alt="Team Member 1">
+            <p>Bayan, Justin</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="Leo.jfif" alt="Team Member 2">
+            <p>Cleofas, Franzleo</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="jai.jpg" alt="Team Member 3">
+            <p>Riguer, Jairus Karl</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="Eliz.jfif" alt="Team Member 4">
+            <p>Saguiguit, Mariella Eliz</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="Gab.jpg" alt="Team Member 5">
+            <p>Sioson, Gabriel</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="team_member_6.jpg" alt="Team Member 6">
+            <p>Viterbo, El-jacob</p>
+        </div>
+        <div class="grid-item team-member">
+            <img src="Fourth.jpg" alt="Team Member 7">
+            <p>Zabat, Leonor IV</p>
+        </div>
+    </div>
+</div>
 
-    function handleNavLinkClick(event) {
-      // Prevent the default behavior of the link
-      event.preventDefault();
-      
-      // Add a class to initiate the transition effect
-      document.body.classList.add('transitioning');
+<script>
+const burgMenu = document.querySelector('.burger-menu');
+const offScreenMenu = document.querySelector('.off-screen-menu');
 
-      // Get the href attribute of the clicked link
-      const href = this.getAttribute('href');
+burgMenu.addEventListener('click', () => {
+    burgMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+});
 
-      // Wait for a short delay to allow the transition effect to start
-      setTimeout(() => {
-        // Redirect to the new page after the transition effect
-        window.location.href = href;
-      }, 500); // Adjust the delay timing as needed
-    }
+function handleNavLinkClick(event) {
+  // Prevent the default behavior of the link
+  event.preventDefault();
+  
+  // Add a class to initiate the transition effect
+  document.body.classList.add('transitioning');
 
-    // Add event listeners to all navigation links
-    document.querySelectorAll('.navbar-links a').forEach(link => {
-      link.addEventListener('click', handleNavLinkClick);
-    });
-    </script>
+  // Get the href attribute of the clicked link
+  const href = this.getAttribute('href');
+
+  // Wait for a short delay to allow the transition effect to start
+  setTimeout(() => {
+    // Redirect to the new page after the transition effect
+    window.location.href = href;
+  }, 500); // Adjust the delay timing as needed
+}
+
+// Add event listeners to all navigation links
+document.querySelectorAll('.navbar-links a').forEach(link => {
+  link.addEventListener('click', handleNavLinkClick);
+});
+</script>
 </body>
 </html>
