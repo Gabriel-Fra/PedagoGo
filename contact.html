@@ -169,7 +169,7 @@
             animation: fadeIn 1s ease; /* Adjust animation timing as needed */
         }
 
-        @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 700px) {
       .burger-menu {
         display: block; /* Show burger menu icon */
       }
@@ -238,7 +238,7 @@
     </div>
 
     <div class="container">
-        <h1>Get in touch</h1>
+        <h1>Contact Us</h1>
         <div>
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -256,6 +256,13 @@
     </div>
 
     <script>
+          const burgMenu = document.querySelector('.burger-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    burgMenu.addEventListener('click', () => {
+        burgMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
         // Function to redirect to thankyou.html
         function redirectToThankYou() {
             window.location.href = "thankyou.html";
